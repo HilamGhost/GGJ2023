@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 namespace CrabNine
 {
@@ -15,27 +16,23 @@ namespace CrabNine
 
         [SerializeField] string currentText = "";
         [SerializeField] float delay = 0.1f;
+        [SerializeField] float endDelay = 1f;
         [Header("UI")]
         [SerializeField] GameObject dialogueGO;
-        [SerializeField] Text nameText;
-        [SerializeField] Text quoteText;
+        [SerializeField] TextMeshProUGUI quoteText;
 
-        [SerializeField] AudioSource dialogueAudioSource;
-        [SerializeField] AudioSource additionalDialogueAudioSource;
+       
 
 
-        #region Properties
-        public bool IsOpen => isOpen;
-        #endregion
-
-
-        private void Start()
-        {
-
-        }
+       
         private void Update()
         {
             quoteText.text = currentText;
+
+            if (Input.GetKeyDown(KeyCode.Space) && !CameraManager.Instance.LevelIsChanging)
+            {
+                InteractWithDialogue();
+            }
         }
         IEnumerator StartDialogue(Quotes quote)
         {
@@ -58,6 +55,8 @@ namespace CrabNine
             }
             
             isContinuing = false;
+            yield return new WaitForSeconds(endDelay);
+            
         }
         /// <summary>
         /// Starts the Dialogue on UI
@@ -78,17 +77,9 @@ namespace CrabNine
         {
             if (isOpen) 
             {
-                if (isContinuing)
-                {
-                    StopAllCoroutines();
-                    currentText = quotes[currentQuote].quote;
-                    isContinuing = false;
-                }
-                else
+                if (!isContinuing)
                 {
                     currentQuote++;
-                    currentText = "";
-                    nameText.text = "";
 
                     if (currentQuote < quotes?.Count)
                     {
@@ -96,18 +87,27 @@ namespace CrabNine
                     }
                     else
                     {
+
+                        CameraManager.Instance.ChangeCamera();
                         currentQuote = 0;
-                        currentText = "";
-                        nameText.text = "";
-                        dialogueGO.SetActive(false);
-                        isOpen = false;
+                        
+
 
                     }
                 }
+                else
+                {
+                    StopAllCoroutines();
+                    currentText = quotes[currentQuote].quote;
+                    isContinuing = false;
+                }
+                
+                
             }
            
         }
-       
+
+        public void ClearText() => quoteText.text = "";
 
         void SetDialogueSound(Quotes quote) 
         {

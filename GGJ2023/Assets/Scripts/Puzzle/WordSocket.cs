@@ -10,6 +10,7 @@ namespace CrabNine
     {
         [SerializeField] private int wordSocket;
         [SerializeField] private bool isFull;
+        [SerializeField] private PaintingCanva paintingCanva;
 
         public bool IsFull => isFull;
         public void OnDrop(PointerEventData eventData)
@@ -22,11 +23,11 @@ namespace CrabNine
                 {
                     if (!isFull)
                     {
-                        PaintingCanva.Instance.ChangePaintingData(wordSocket,_imagineObject.DissolveImage(this));
+                        paintingCanva.ChangePaintingData(wordSocket,_imagineObject.DissolveImage(this));
                         eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition =
                             GetComponent<RectTransform>().anchoredPosition;
                     
-                        PaintingCanva.Instance.ApplyImages();
+                        paintingCanva.ApplyImages();
                         isFull = true;
                     }
                     else
@@ -44,7 +45,7 @@ namespace CrabNine
         public void ClearPaintCanvas()
         {
             Debug.Log("Canvas Deleted");
-            PaintingCanva.Instance.ClearCanvas(wordSocket);
+            paintingCanva.ClearCanvas(wordSocket);
             isFull = false;
         }
         

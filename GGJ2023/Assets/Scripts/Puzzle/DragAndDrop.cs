@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace CrabNine
 {
-    public class DragAndDrop : MonoBehaviour,IPointerDownHandler,IBeginDragHandler,IEndDragHandler,IDragHandler
+    public class DragAndDrop : MonoBehaviour,IPointerDownHandler,IBeginDragHandler,IEndDragHandler,IDragHandler,IPointerUpHandler
     {
         [SerializeField] protected Camera mainCam;
         [SerializeField] protected RectTransform rectTransform;
@@ -31,6 +31,7 @@ namespace CrabNine
         public virtual void OnBeginDrag(PointerEventData eventData)
         {
             Debug.Log("OnDragBegin");
+            canvasGroup.blocksRaycasts = false;
         }
 
         public virtual void OnEndDrag(PointerEventData eventData)
@@ -46,6 +47,10 @@ namespace CrabNine
             rectTransform.anchoredPosition += eventData.delta/mainCanvas.scaleFactor;
 
         }
-        
+
+        public void OnPointerUp(PointerEventData eventData)
+        {
+            canvasGroup.blocksRaycasts = true;
+        }
     }
 }

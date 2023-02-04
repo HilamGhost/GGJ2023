@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace CrabNine
 {
-    public class PaintingCanva : Singleton<PaintingCanva>
+    public class PaintingCanva : MonoBehaviour
     {
         [SerializeField] private PaintingData[] paintingDatas;
 
@@ -21,9 +21,9 @@ namespace CrabNine
             
         }
         // Start is called before the first frame update
-        protected override void Awake()
+        protected  void Awake()
         {
-            base.Awake();
+            
             ApplyImages();
         }
         

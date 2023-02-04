@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,15 +14,27 @@ namespace CrabNine
         private WordSocket connectedWordSocket;
         private WordSocket activeWordSocket;
         public Vector2 StartPoint => startPoint;
+
+        public PaintingData PaintingData
+        {
+            get
+            {
+                return paintingData;
+            }
+            set
+            {
+                paintingData.abstractText = value.abstractText;
+                paintingData.abstractName = value.abstractName;
+                paintingData.abstractImage = value.abstractImage;
+            }
+        }
         
 
-        public override void Awake()
+        private void Start()
         {
-            base.Awake();
             startPoint = rectTransform.anchoredPosition;
             paintingData.abstractText = this;
-            paintingData.abstractName = GetComponent<TextMeshProUGUI>().text;
-
+            GetComponent<TextMeshProUGUI>().text = paintingData.abstractName;
         }
 
         public override void OnBeginDrag(PointerEventData eventData)
@@ -29,6 +42,18 @@ namespace CrabNine
            base.OnBeginDrag(eventData);
            activeWordSocket = connectedWordSocket;
         }
+
+        public override void OnDrag(PointerEventData eventData)
+        {
+            base.OnDrag(eventData);
+            if (activeWordSocket != null)
+            {
+                activeWordSocket.ClearPaintCanvas();
+                activeWordSocket = null;
+                connectedWordSocket = null;
+            }
+        }
+
 
         public override void OnEndDrag(PointerEventData eventData)
         {
@@ -47,12 +72,7 @@ namespace CrabNine
                 }
             }
 
-            if (activeWordSocket != null)
-            {
-                activeWordSocket.ClearPaintCanvas();
-                activeWordSocket = null;
-                connectedWordSocket = null;
-            }
+            
             
            
         }
