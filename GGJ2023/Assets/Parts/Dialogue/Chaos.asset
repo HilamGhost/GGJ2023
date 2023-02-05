@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Chaos
   m_EditorClassIdentifier: 
   quote:
-  - quote: What is the meaning of life?
+  - quote: What?
     quoteDelay: 0
     hasCustomSFX: 0
     customQuoteSFX: {fileID: 0}
     additionalCustomSFX: {fileID: 0}
-  - quote: What?
+  - quote: What is the meaning of life?
     quoteDelay: 0
     hasCustomSFX: 0
     customQuoteSFX: {fileID: 0}

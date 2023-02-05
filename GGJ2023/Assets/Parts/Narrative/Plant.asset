@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: Plant
   m_EditorClassIdentifier: 
   quote:
-  - quote: Oh, hello.
+  - quote: I have a question for you, will you be able to answer it?
     quoteDelay: 0
     hasCustomSFX: 0
     customQuoteSFX: {fileID: 0}
     additionalCustomSFX: {fileID: 0}
-  - quote: I have a question for you, will you be able to answer it?
+  - quote: 'Okey
+
+'
     quoteDelay: 0
     hasCustomSFX: 0
     customQuoteSFX: {fileID: 0}
