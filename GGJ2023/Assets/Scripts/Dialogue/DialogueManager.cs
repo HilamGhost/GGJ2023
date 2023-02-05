@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -17,17 +18,24 @@ namespace CrabNine
         [SerializeField] string currentText = "";
         [SerializeField] float delay = 0.1f;
         [SerializeField] float endDelay = 1f;
+         private TextMeshProUGUI _currentTextComp;
         [Header("UI")]
+        [SerializeField] GameObject qutoeGO;
         [SerializeField] GameObject dialogueGO;
         [SerializeField] TextMeshProUGUI quoteText;
+        [Header("Dialogue")] 
+        [SerializeField] private TextMeshProUGUI[] dialogueBars;
 
-       
 
+        protected override void Awake()
+        {
+            base.Awake();
+            _currentTextComp = quoteText;
+        }
 
-       
         private void Update()
         {
-            quoteText.text = currentText;
+            _currentTextComp.text = currentText;
 
             if (Input.GetKeyDown(KeyCode.Space) && !CameraManager.Instance.LevelIsChanging)
             {
@@ -61,13 +69,26 @@ namespace CrabNine
         /// <summary>
         /// Starts the Dialogue on UI
         /// </summary>
-        public void TakeQuote(List<Quotes> quoteLists)
+        public void TakeQuote(List<Quotes> quoteLists,bool _isDialogue = false)
         {
             isOpen = true;
             quotes = quoteLists;
 
-            dialogueGO.SetActive(true);
-            StartCoroutine(StartDialogue(quotes[currentQuote]));
+            if (_isDialogue)
+            {
+                dialogueGO.SetActive(true);
+                _currentTextComp = dialogueBars[currentQuote];
+                StartCoroutine(StartDialogue(quotes[currentQuote]));
+                
+            }
+            else
+            {
+                qutoeGO.SetActive(true);
+                _currentTextComp = quoteText;
+                StartCoroutine(StartDialogue(quotes[currentQuote]));
+            }
+          
+            
         }
 
         /// <summary>
@@ -83,7 +104,11 @@ namespace CrabNine
 
                     if (currentQuote < quotes?.Count)
                     {
-                        StartCoroutine(StartDialogue(quotes[currentQuote]));
+                        if (dialogueGO.activeSelf)
+                        {
+                            _currentTextComp = dialogueBars[currentQuote];
+                            StartCoroutine(StartDialogue(quotes[currentQuote]));
+                        }
                     }
                     else
                     {
@@ -107,7 +132,16 @@ namespace CrabNine
            
         }
 
-        public void ClearText() => quoteText.text = "";
+        public void ClearText()
+        {
+            quoteText.text = "";
+            for (int i = 0; i < dialogueBars.Length; i++)
+            {
+                dialogueBars[i].text = "";
+            }
+            dialogueGO.SetActive(false);
+            qutoeGO.SetActive(false);
+        } 
 
         void SetDialogueSound(Quotes quote) 
         {

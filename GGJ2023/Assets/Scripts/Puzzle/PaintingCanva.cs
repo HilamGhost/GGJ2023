@@ -54,6 +54,13 @@ namespace CrabNine
             ApplyImages();
             
         }
-        
+
+        public void ClearCanvasFull()
+        {
+            for (int i = 0; i < paintingDatas.Length; i++)
+            {
+                ClearCanvas(i);
+            }
+        }
     }
 }

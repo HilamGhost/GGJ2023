@@ -17,7 +17,7 @@ namespace CrabNine
         public bool LevelIsChanging => levelIsChanging;
 
       
-
+        
         public void ChangeCamera()
         {
             if(PuzzleManager.Instance.transform.parent.gameObject.activeSelf) PuzzleManager.Instance.GoDown();

@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
-using Cinemachine;
+using TMPro;
+using Unity.VisualScripting;
 
 namespace CrabNine
 {
@@ -17,6 +18,8 @@ namespace CrabNine
         [Header("UI")] 
         [SerializeField] private GameObject narrativeCanvas;
         [SerializeField] private GameObject puzzleCanvas;
+        [SerializeField] private PaintingCanva paintingCanva;
+        [SerializeField] private TextMeshProUGUI textMeshProUGUI;
         [SerializeField] private WordData wordData;
         
 
@@ -37,6 +40,7 @@ namespace CrabNine
             if (CameraManager.Instance.LevelIsChanging) return;
             
             CameraManager.Instance.ChangeCamera();
+            
             
         }
         public void ChangeLevel()
@@ -66,6 +70,11 @@ namespace CrabNine
                 case StoryType.Puzzle: 
                     puzzleCanvas.SetActive(true);
                     wordData.AssignPuzzle(_timePoint._puzzlePart);
+                    paintingCanva.ClearCanvasFull();
+                    break;
+                case  StoryType.Dialogue:
+                    narrativeCanvas.SetActive(true);
+                    DialogueManager.Instance.TakeQuote(_timePoint._dialoguePart.Quote,true);;
                     break;
             }
         }
@@ -77,6 +86,7 @@ namespace CrabNine
             if (TimeLine[level + 1].StoryType == StoryType.Puzzle)
             {
                 StartAction(TimeLine[level + 1]);
+                paintingCanva.ClearCanvasFull();
                 PuzzleManager.Instance.GoUp();
             }
         }
@@ -85,6 +95,7 @@ namespace CrabNine
             DialogueManager.Instance.ClearText();
             narrativeCanvas.SetActive(false);
             puzzleCanvas.SetActive(false);
+            
         }
 
 
@@ -92,7 +103,9 @@ namespace CrabNine
         {
            
             narrativeCanvas.transform.position = _target.position;
+            textMeshProUGUI.rectTransform.anchoredPosition = _target.GetComponentInChildren<CameraPlaceManager>().textPosition.localPosition*100;
             puzzleCanvas.transform.position = _target.position;
+            
             EndAction();
             ChangeLevel();
         }

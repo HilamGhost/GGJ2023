@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05fc940473daac24c9500a90fb22b100, type: 3}
+  m_Name: Flower
+  m_EditorClassIdentifier: 
+  ImagineObjects:
+  - abstractName: Wish
+    abstractImage: {fileID: 21300000, guid: b042e4d496f1c3a4daeeee8eaf06c798, type: 3}
+    abstractText: {fileID: 0}
+  - abstractName: Hope
+    abstractImage: {fileID: 21300000, guid: 751298b3b1ab1594ca9fb90ae10cf5d0, type: 3}
+    abstractText: {fileID: 0}
+  - abstractName: Spark
+    abstractImage: {fileID: 21300000, guid: d155494af80325747b53ddfcdaeefe4c, type: 3}
+    abstractText: {fileID: 0}
+  - abstractName: Breeze
+    abstractImage: {fileID: 21300000, guid: 2c62c7565c20d14478adf90ced8a4899, type: 3}
+    abstractText: {fileID: 0}
+  - abstractName: Rain
+    abstractImage: {fileID: 21300000, guid: 2d0295d98bc7d154091d53d2140596fb, type: 3}
+    abstractText: {fileID: 0}

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05fc940473daac24c9500a90fb22b100, type: 3}
+  m_Name: Fish
+  m_EditorClassIdentifier: 
+  ImagineObjects:
+  - abstractName: Eye
+    abstractImage: {fileID: 21300000, guid: bcae4c704b9abfe438b66e9d5d7c6251, type: 3}
+    abstractText: {fileID: 0}
+  - abstractName: Star
+    abstractImage: {fileID: 21300000, guid: aca5a4791da4ab4499320a8c68f4fadd, type: 3}
+    abstractText: {fileID: 0}
+  - abstractName: Tear
+    abstractImage: {fileID: 21300000, guid: 849ae57c49aea79438336c48d0ed64cd, type: 3}
+    abstractText: {fileID: 0}
+  - abstractName: Echo
+    abstractImage: {fileID: 21300000, guid: c7b448433eab62c489049adbedb0d214, type: 3}
+    abstractText: {fileID: 0}
+  - abstractName: Flow
+    abstractImage: {fileID: 21300000, guid: ea5bc2e67626185479200eff370830c0, type: 3}
+    abstractText: {fileID: 0}

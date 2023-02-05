@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05fc940473daac24c9500a90fb22b100, type: 3}
+  m_Name: Jigsaw
+  m_EditorClassIdentifier: 
+  ImagineObjects:
+  - abstractName: Match
+    abstractImage: {fileID: 21300000, guid: 6ec44a87e18445145bccd5e109be5b2d, type: 3}
+    abstractText: {fileID: 0}
+  - abstractName: Time
+    abstractImage: {fileID: 21300000, guid: a0c906b37ec8b9245a0553e9e7c4cc9c, type: 3}
+    abstractText: {fileID: 0}
+  - abstractName: Piece
+    abstractImage: {fileID: 21300000, guid: 153db2d463bc1b442af515739f962740, type: 3}
+    abstractText: {fileID: 0}
+  - abstractName: Question
+    abstractImage: {fileID: 21300000, guid: cd4c187ad76b8f342b12749dce1f1fab, type: 3}
+    abstractText: {fileID: 0}
+  - abstractName: Harmony
+    abstractImage: {fileID: 21300000, guid: 7829cc244a44adb4dbd8eb9ec82554bf, type: 3}
+    abstractText: {fileID: 0}

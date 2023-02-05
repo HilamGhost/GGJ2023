@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e25a25bd4c1f5c142a9eddd838e9392f, type: 3}
+  m_Name: Chaos If you 1
+  m_EditorClassIdentifier: 
+  quote:
+  - quote: "\"If you\u2019re here for the party It ended like an hour ago.\"\nThe
+      painter asked them all the same question."
+    quoteDelay: 0
+    hasCustomSFX: 0
+    customQuoteSFX: {fileID: 0}
+    additionalCustomSFX: {fileID: 0}

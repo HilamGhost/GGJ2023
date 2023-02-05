@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05fc940473daac24c9500a90fb22b100, type: 3}
+  m_Name: Puzzle
+  m_EditorClassIdentifier: 
+  ImagineObjects:
+  - abstractName: "Bal\u0131k"
+    abstractImage: {fileID: 21300000, guid: 9125c204f566db048a92ebcb64d9d14a, type: 3}
+    abstractText: {fileID: 0}
+  - abstractName: Ayak
+    abstractImage: {fileID: 21300000, guid: dcea51d6065d64246aeec467afeff684, type: 3}
+    abstractText: {fileID: 0}
+  - abstractName: "Bayku\u015F"
+    abstractImage: {fileID: 21300000, guid: 70632ddfe8e71b04b8f90ef7e29a9e98, type: 3}
+    abstractText: {fileID: 0}
+  - abstractName: "Ter\xF6rist"
+    abstractImage: {fileID: 21300000, guid: a04ecc9d5e12d5d449077414eb86635e, type: 3}
+    abstractText: {fileID: 0}
+  - abstractName: Steve Jobs
+    abstractImage: {fileID: 21300000, guid: e92527f6d0fe45342ab542b47346d45f, type: 3}
+    abstractText: {fileID: 0}

@@ -1,6 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using TMPro;
 using UnityEngine.EventSystems;
@@ -26,15 +25,25 @@ namespace CrabNine
                 paintingData.abstractText = value.abstractText;
                 paintingData.abstractName = value.abstractName;
                 paintingData.abstractImage = value.abstractImage;
+                
+                paintingData.abstractText = this;
+                GetComponent<TextMeshProUGUI>().text = paintingData.abstractName;
             }
         }
-        
 
-        private void Start()
+       
+        private void OnEnable()
         {
-            startPoint = rectTransform.anchoredPosition;
+            if(Mathf.Approximately(startPoint.x,0) && Mathf.Approximately(startPoint.y,0)) startPoint = rectTransform.anchoredPosition;
+ 
+            rectTransform.anchoredPosition = startPoint;
             paintingData.abstractText = this;
             GetComponent<TextMeshProUGUI>().text = paintingData.abstractName;
+        }
+
+        private void OnDisable()
+        {
+            rectTransform.anchoredPosition = startPoint;
         }
 
         public override void OnBeginDrag(PointerEventData eventData)

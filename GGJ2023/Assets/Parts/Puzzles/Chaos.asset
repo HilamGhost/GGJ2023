@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05fc940473daac24c9500a90fb22b100, type: 3}
+  m_Name: Chaos
+  m_EditorClassIdentifier: 
+  ImagineObjects:
+  - abstractName: Loud
+    abstractImage: {fileID: 21300000, guid: c3441321d95ddb94f82fbf950a823c28, type: 3}
+    abstractText: {fileID: 0}
+  - abstractName: Storm
+    abstractImage: {fileID: 21300000, guid: a6251843a9ff5cb4580b4fef6c986a92, type: 3}
+    abstractText: {fileID: 0}
+  - abstractName: Spike
+    abstractImage: {fileID: 21300000, guid: f30b7189774ebca4ea7d2fd7b086426d, type: 3}
+    abstractText: {fileID: 0}
+  - abstractName: Party
+    abstractImage: {fileID: 21300000, guid: 817fb7f437bd8254ba597b89a6cea6c3, type: 3}
+    abstractText: {fileID: 0}
+  - abstractName: Death
+    abstractImage: {fileID: 21300000, guid: b661ecadd4ff9a34089b739d671d9bff, type: 3}
+    abstractText: {fileID: 0}

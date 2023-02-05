@@ -8,7 +8,8 @@ namespace CrabNine
     public enum StoryType
     {
         Narrative,
-        Puzzle
+        Puzzle,
+        Dialogue
     }
     
     [Serializable]
@@ -18,7 +19,9 @@ namespace CrabNine
 
         public bool isPuzzle;
         public bool isNarrative;
+        public bool isDialogue;
         [ConditionalHide("isNarrative",true)]public NarrativePart _narrativePart;
         [ConditionalHide("isPuzzle",true)] public PuzzlePart _puzzlePart;
+        [ConditionalHide("isDialogue", true)] public DialoguePart _dialoguePart;
     }
 }

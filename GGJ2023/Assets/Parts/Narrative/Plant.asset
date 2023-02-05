@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c3f6ad965a12b64b9f1688360790a5c, type: 3}
+  m_Name: Plant
+  m_EditorClassIdentifier: 
+  quote:
+  - quote: Oh, hello.
+    quoteDelay: 0
+    hasCustomSFX: 0
+    customQuoteSFX: {fileID: 0}
+    additionalCustomSFX: {fileID: 0}
+  - quote: I have a question for you, will you be able to answer it?
+    quoteDelay: 0
+    hasCustomSFX: 0
+    customQuoteSFX: {fileID: 0}
+    additionalCustomSFX: {fileID: 0}
+  - quote: "Why do you think you\u2019re here? What does life mean to you?"
+    quoteDelay: 0
+    hasCustomSFX: 0
+    customQuoteSFX: {fileID: 0}
+    additionalCustomSFX: {fileID: 0}
+  - quote: "It\u2019s easy, life is\u2026 "
+    quoteDelay: 0
+    hasCustomSFX: 0
+    customQuoteSFX: {fileID: 0}
+    additionalCustomSFX: {fileID: 0}
