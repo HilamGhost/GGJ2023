@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-namespace CrabNine
+    namespace CrabNine
 {
     public class PuzzleManager : Singleton<PuzzleManager>
     {
@@ -14,7 +14,6 @@ namespace CrabNine
         [SerializeField] private RectTransform canvaTransform;
 
         [SerializeField] private GameObject puzzleManager;
-        [SerializeField] private GameObject puzzleEndManager;
 
         protected override void Awake()
         {
@@ -34,11 +33,7 @@ namespace CrabNine
             canvaTransform.DOLocalMoveY(0,time);
         }
 
-        public void ChangeEndPuzzle()
-        {
-            Destroy(puzzleManager);
-            puzzleEndManager.SetActive(true);
-        }
+       
        
     }
 }

@@ -5,6 +5,7 @@ using System.Diagnostics;
 using UnityEngine;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 
 namespace CrabNine
 {
@@ -49,10 +50,7 @@ namespace CrabNine
             level++;
             if (level>= TimeLine.Length)
             {
-                puzzleCanvas.SetActive(true);
-                PuzzleManager.Instance.ChangeEndPuzzle();
-                PuzzleManager.Instance.GoUp();
-                OpenPuzzleBefore();
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
             else
                 StartAction(TimeLine[level]);
